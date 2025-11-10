@@ -1,1 +1,29 @@
-<p>todo-add works!</p>
+<div class="my-4">
+  
+  <form [formGroup]="todoForm" (ngSubmit)="addTodo()"> 
+    
+    <div class="input-group">
+      
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Escribe tu nueva tarea aquí..."
+        formControlName="titleInput" >
+
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="todoForm.invalid" >
+        <i class="bi bi-plus-lg"></i> Añadir Tarea
+      </button>
+
+    </div>
+    
+  </form>
+
+  <div *ngIf="todoForm.get('titleInput')?.invalid && todoForm.get('titleInput')?.touched" 
+       class="alert alert-warning mt-2" 
+       role="alert">
+    El nombre de la tarea no puede estar vacío.
+  </div>
+</div>
