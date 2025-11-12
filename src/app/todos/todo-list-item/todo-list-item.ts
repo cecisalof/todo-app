@@ -37,7 +37,9 @@ export class TodoListItem implements OnInit {
   }
 
   completeTask(): void {
-
+    this.store.dispatch(
+        actions.completeTodo({id: this.todo.id })
+      );
   }
 
   editTask(): void {
@@ -53,7 +55,6 @@ export class TodoListItem implements OnInit {
         actions.editTodo({id: this.todo.id, title: this.titleInput.value })
       );      
     }
-
   }
 
   deleteTask(): void {

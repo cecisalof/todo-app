@@ -6,6 +6,11 @@ export const createTodo = createAction (
     props<{title: string}>()
 )
 
+export const completeTodo = createAction(
+    '[Todo] Complete Todo',
+    props<{id: number}>() // id de la tarea que queremos dar por echa
+)
+
 export const editTodo = createAction(
     '[Todo] Edit Todo',
     props<{id: number, title: string}>()
@@ -13,5 +18,5 @@ export const editTodo = createAction(
 
 export const deleteTodo = createAction(
     '[Todo] Delete Todo',
-    props<{id: number}>()
+    props<{id: number}>() // id de la tarea que queremos eliminar
 )
