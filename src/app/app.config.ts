@@ -6,6 +6,7 @@ import { provideStore } from '@ngrx/store';
 import { TodoReducer } from './todos/todo.reducer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
       maxAge: 25, // preserva un máximo de 25 estados en el historial
       logOnly: environment.production, //Deshabilita las características de "tiempo-viaje" en producción
       autoPause: true, //Pausa la grabación cuandop la pestaña DevTools está inactiva
-    })
+    }),
+    provideHttpClient()
   ]
 };

@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { selectTodos } from '../todo.selector';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -15,15 +16,20 @@ import { CommonModule } from '@angular/common';
 })
 
 export class TodoList implements OnInit {
- // LISTA DE TAREAS
- // El Observable vive en el componente padre
- todos$!: Observable<TodoDTO[]>
+  // LISTA DE TAREAS
+  // El Observable vive en el componente padre
+  todos$!: Observable<TodoDTO[]>
 
- constructor(private store: Store<AppState>){ }
-  
- ngOnInit(): void {
-  //Obtengo todos$
-   this.todos$= this.store.select(selectTodos)
- }
+  constructor(
+    private store: Store<AppState>,
+    private todoService: TodoService
+  ) { }
+
+  ngOnInit(): void {
+    //Obtengo todos$
+    this.todos$ = this.store.select(selectTodos)
+    // aquí nos suscribiríamos a un servicio y éste haría una petición http.get para recuperar el array de todos.
+    this.todoService.getAllTodos().subscribe((todos) => console.log(todos))
+  }
 
 }

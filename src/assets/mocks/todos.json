@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1678886400000,
+    "title": "Configurar rutas de la aplicación",
+    "done": true
+  },
+  {
+    "id": 1678886401000,
+    "title": "Implementar el Reducer de tareas (ToDos)",
+    "done": false
+  },
+  {
+    "id": 1678886402000,
+    "title": "Diseñar la interfaz de usuario con Tailwind CSS",
+    "done": false
+  },
+  {
+    "id": 1678886403000,
+    "title": "Crear el Effect para la carga de datos (fetch)",
+    "done": true
+  },
+  {
+    "id": 1678886404000,
+    "title": "Revisar y documentar el código fuente",
+    "done": false
+  },
+  {
+    "id": 1678886405000,
+    "title": "Añadir la funcionalidad 'Eliminar Tarea'",
+    "done": false
+  },
+  {
+    "id": 1678886406000,
+    "title": "Crear el Action para el manejo de errores (Failure)",
+    "done": false
+  },
+  {
+    "id": 1678886407000,
+    "title": "Escribir pruebas unitarias para el Reducer",
+    "done": true
+  },
+  {
+    "id": 1678886408000,
+    "title": "Establecer la conexión con el servicio HTTP de Angular",
+    "done": false
+  },
+  {
+    "id": 1678886409000,
+    "title": "Implementar el selector 'getCompletedTasks'",
+    "done": true
+  }
+]
