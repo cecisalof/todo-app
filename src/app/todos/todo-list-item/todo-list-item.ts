@@ -57,6 +57,8 @@ export class TodoListItem implements OnInit {
   }
 
   deleteTask(): void {
-
+      this.store.dispatch(
+        actions.deleteTodo({id: this.todo.id })
+      );
   }
 }

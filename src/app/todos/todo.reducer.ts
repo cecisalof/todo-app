@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { createTodo, editTodo } from "./todo.actions";
+import { createTodo, editTodo, deleteTodo } from "./todo.actions";
 import { TodoDTO } from "./models/todo.dto";
 
 // ARRAY VACÍO DE TAREAS
@@ -20,5 +20,6 @@ export const TodoReducer = createReducer (
                 return todo;
             }
         })
-    })
+    }),
+    on(deleteTodo, (state, {id}) => state.filter(todo => todo.id != id)) //filter devuelve un nuevo array de elementos, por lo que no mutamos el state y recibimos un nuevo array EXCEPTO el elemento que tenga el id que le pasamos como parámetro y así lo eliminamos.
 );
