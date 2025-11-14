@@ -30,8 +30,8 @@ export class TodoAdd {
     // Usar la validez del grupo
     if (this.todoForm.valid) { 
       // Acceder al valor del control a través del grupo
-      const title = this.todoForm.get('titleInput')?.value.trim(); 
-      console.log('DESPACHANDO A LA STORE');
+      const title = this.todoForm.get('titleInput')?.value.trim();
+      console.log('despachando a la store');
       
       this.store.dispatch(actions.createTodo({ title }));
       

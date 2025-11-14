@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { TodoList } from './todos/todo-list/todo-list';
 import { TodoAdd } from "./todos/todo-add/todo-add";
 
